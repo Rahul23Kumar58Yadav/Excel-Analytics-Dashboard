@@ -1,0 +1,276 @@
+.chart-container {
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100%; /* Ensure full width by default */
+  box-sizing: border-box; /* Include padding in width calculation */
+  max-width: 100%; /* Prevent exceeding viewport */
+}
+
+.chart-container.light-mode {
+  background-color: #ffffff;
+  color: #1e293b;
+}
+
+.chart-container.dark-mode {
+  background-color: #1e293b;
+  color: #f9fafb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 10px; /* Added gap for better spacing */
+}
+
+.chart-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.download-btn {
+  padding: 6px 12px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s ease;
+  min-width: 100px; /* Minimum width for consistency */
+}
+
+.download-btn:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+.download-btn:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.chart-description {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.chart-wrapper {
+  position: relative;
+  min-height: 200px;
+  margin-bottom: 10px;
+  width: 100%; /* Ensure full width */
+}
+
+.chart-loading {
+  text-align: center;
+  font-size: 1rem;
+  color: #64748b;
+  padding: 15px;
+}
+
+.chart-error {
+  color: #ef4444;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.chart-legend {
+  padding: 8px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.chart-legend h4 {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.chart-legend ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chart-legend li {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+}
+
+.legend-color {
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+  border-radius: 2px;
+}
+
+.chart-container.dark-mode .chart-description {
+  color: #d1d5db;
+}
+
+.chart-container.dark-mode .chart-loading {
+  color: #94a3b8;
+}
+
+.chart-container.dark-mode .download-btn {
+  background-color: #60a5fa;
+}
+
+.chart-container.dark-mode .download-btn:hover:not(:disabled) {
+  background-color: #3b82f6;
+}
+
+.chart-container.dark-mode .chart-error {
+  color: #f87171;
+}
+
+.chart-container.dark-mode .chart-legend {
+  border-top-color: #4b5563;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .chart-container {
+    padding: 8px; /* Further reduced padding */
+    margin-bottom: 8px; /* Reduced margin */
+    max-width: 100%; /* Ensure it fits viewport */
+    margin-left: auto; /* Center the container */
+    margin-right: auto; /* Center the container */
+  }
+
+  .chart-header {
+    flex-direction: column;
+    gap: 8px; /* Reduced gap */
+    margin-bottom: 6px; /* Reduced margin */
+  }
+
+  .chart-title {
+    font-size: 1rem; /* Reduced font size */
+    width: 100%; /* Full width for title */
+  }
+
+  .download-btn {
+    padding: 4px 8px; /* Reduced padding */
+    font-size: 0.75rem; /* Reduced font size */
+    width: 100%; /* Full width to prevent overflow */
+    max-width: 120px; /* Limit max width for balance */
+  }
+
+  .chart-description {
+    font-size: 0.75rem; /* Reduced font size */
+    margin-bottom: 6px; /* Reduced margin */
+  }
+
+  .chart-wrapper {
+    min-height: 140px; /* Reduced height */
+    margin-bottom: 6px; /* Reduced margin */
+  }
+
+  .chart-loading {
+    font-size: 0.85rem; /* Reduced font size */
+    padding: 8px; /* Reduced padding */
+  }
+
+  .chart-error {
+    font-size: 0.8rem; /* Reduced font size */
+    margin-bottom: 6px; /* Reduced margin */
+  }
+
+  .chart-legend {
+    padding: 5px; /* Reduced padding */
+  }
+
+  .chart-legend h4 {
+    font-size: 0.85rem; /* Reduced font size */
+    margin-bottom: 4px; /* Reduced margin */
+  }
+
+  .chart-legend li {
+    font-size: 0.75rem; /* Reduced font size */
+    margin-bottom: 3px; /* Reduced margin */
+  }
+
+  .legend-color {
+    width: 8px; /* Reduced size */
+    height: 8px; /* Reduced size */
+    margin-right: 4px; /* Reduced margin */
+  }
+}
+
+@media (max-width: 360px) {
+  .chart-container {
+    padding: 6px; /* Further reduced padding */
+    margin-bottom: 6px; /* Further reduced margin */
+    max-width: 320px; /* Further reduced max-width */
+    margin-left: auto; /* Center the container */
+    margin-right: auto; /* Center the container */
+  }
+
+  .chart-header {
+    gap: 6px; /* Further reduced gap */
+    margin-bottom: 4px; /* Further reduced margin */
+  }
+
+  .chart-title {
+    font-size: 0.9rem; /* Further reduced font size */
+  }
+
+  .download-btn {
+    padding: 3px 6px; /* Further reduced padding */
+    font-size: 0.7rem; /* Further reduced font size */
+    width: 100%; /* Full width */
+    max-width: 100px; /* Further reduced max width */
+  }
+
+  .chart-description {
+    font-size: 0.7rem; /* Further reduced font size */
+    margin-bottom: 4px; /* Further reduced margin */
+  }
+
+  .chart-wrapper {
+    min-height: 110px; /* Further reduced height */
+    margin-bottom: 4px; /* Further reduced margin */
+  }
+
+  .chart-loading {
+    font-size: 0.8rem; /* Further reduced font size */
+    padding: 6px; /* Further reduced padding */
+  }
+
+  .chart-error {
+    font-size: 0.75rem; /* Further reduced font size */
+    margin-bottom: 4px; /* Further reduced margin */
+  }
+
+  .chart-legend {
+    padding: 4px; /* Further reduced padding */
+  }
+
+  .chart-legend h4 {
+    font-size: 0.8rem; /* Further reduced font size */
+    margin-bottom: 3px; /* Further reduced margin */
+  }
+
+  .chart-legend li {
+    font-size: 0.7rem; /* Further reduced font size */
+    margin-bottom: 2px; /* Further reduced margin */
+  }
+
+  .legend-color {
+    width: 6px; /* Further reduced size */
+    height: 6px; /* Further reduced size */
+    margin-right: 3px; /* Further reduced margin */
+  }
+}
