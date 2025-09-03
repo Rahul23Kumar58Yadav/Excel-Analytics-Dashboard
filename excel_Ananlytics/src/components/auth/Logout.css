@@ -1,0 +1,65 @@
+.logout-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.dark .logout-container {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.logout-content {
+  max-width: 400px;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dark .logout-content {
+  background: #2d2d2d;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.logout-icon {
+  font-size: 3rem;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+}
+
+.dark .logout-icon {
+  color: #818cf8;
+}
+
+.spinner-icon {
+  font-size: 3rem;
+  color: #3b82f6;
+  margin-bottom: 1rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+h2 {
+  margin-bottom: 1rem;
+  color: #2d3748;
+}
+
+.dark h2 {
+  color: #f8fafc;
+}
+
+p {
+  color: #4a5568;
+}
+
+.dark p {
+  color: #cbd5e0;
+}

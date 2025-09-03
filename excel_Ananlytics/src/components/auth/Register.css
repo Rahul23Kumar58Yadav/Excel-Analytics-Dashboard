@@ -1,0 +1,773 @@
+:root {
+  /* Light Mode Colors */
+  --primary-light: #3b82f6;
+  --bg-light: #f8fafc;
+  --card-light: #ffffff;
+  --text-light: #1e293b;
+  --border-light: #e5e7eb;
+  --hover-light: #f1f5f9;
+  --accent-light: #3b82f6;
+  --secondary-text-light: #64748b;
+  --success-light: #10b981;
+
+  /* Dark Mode Colors */
+  --primary-dark: #6366f1;
+  --bg-dark: #0f172a;
+  --card-dark: #1e293b;
+  --text-dark: #f8fafc;
+  --border-dark: #475569;
+  --hover-dark: #334155;
+  --accent-dark: #818cf8;
+  --secondary-text-dark: #94a3b8;
+  --success-dark: #34d399;
+}
+
+/* Base Styles */
+.register-container {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+}
+
+.register-container.light {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+.register-container.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.register-card {
+  display: flex;
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Section - Registration Form */
+.register-form-section {
+  flex: 1;
+  padding: 3rem;
+  background-color: var(--card-light);
+}
+
+.dark .register-form-section {
+  background-color: var(--card-dark);
+}
+
+.register-form-section h2 {
+  margin-bottom: 1.5rem;
+  color: var(--accent-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.75rem;
+}
+
+.dark .register-form-section h2 {
+  color: var(--accent-dark);
+}
+
+.icon {
+  font-size: 1.2em;
+}
+
+/* Form Styles */
+.form-group {
+  position: relative;
+  margin-bottom: 1.8rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.dark .form-group input {
+  border-color: var(--border-dark);
+  background-color: var(--hover-dark);
+  color: var(--text-dark);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent-light);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.dark .form-group input:focus {
+  border-color: var(--accent-dark);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+.error-message {
+  position: absolute;
+  bottom: -1.25rem;
+  left: 0;
+  color: #ef4444;
+  font-size: 0.8rem;
+}
+
+input.error {
+  border-color: #ef4444 !important;
+}
+
+.dark input.error {
+  border-color: #f87171 !important;
+}
+
+/* Password Strength Meter */
+.password-strength-meter {
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.strength-indicator {
+  height: 4px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.strength-text {
+  font-size: 0.8rem;
+  color: var(--secondary-text-light);
+}
+
+.dark .strength-text {
+  color: var(--secondary-text-dark);
+}
+
+/* Role Selection */
+.role-selection {
+  margin-top: 1.5rem;
+}
+
+.role-selection label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.role-options {
+  display: flex;
+  gap: 1rem;
+}
+
+.role-option {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dark .role-option {
+  border-color: var(--border-dark);
+}
+
+.role-option:hover {
+  border-color: var(--accent-light);
+}
+
+.dark .role-option:hover {
+  border-color: var(--accent-dark);
+}
+
+.role-option.active {
+  border-color: var(--accent-light);
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.dark .role-option.active {
+  border-color: var(--accent-dark);
+  background-color: rgba(99, 102, 241, 0.2);
+}
+
+.role-option input {
+  display: none;
+}
+
+.role-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-text-light);
+}
+
+.dark .role-icon {
+  color: var(--secondary-text-dark);
+}
+
+.role-option.active .role-icon {
+  color: var(--accent-light);
+}
+
+.dark .role-option.active .role-icon {
+  color: var(--accent-dark);
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--accent-light);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.dark .submit-btn {
+  background-color: var(--accent-dark);
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.dark .submit-btn:hover:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Login Prompt */
+.login-prompt {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--secondary-text-light);
+}
+
+.dark .login-prompt {
+  color: var(--secondary-text-dark);
+}
+
+.login-prompt a {
+  color: var(--accent-light);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dark .login-prompt a {
+  color: var(--accent-dark);
+}
+
+.login-prompt a:hover {
+  text-decoration: underline;
+}
+
+/* Right Section - Welcome Message */
+.welcome-section {
+  flex: 1;
+  padding: 3rem;
+  background: linear-gradient(135deg, var(--accent-light), #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.dark .welcome-section {
+  background: linear-gradient(135deg, var(--accent-dark), #6d28d9);
+}
+
+.welcome-content {
+  max-width: 350px;
+}
+
+.welcome-content h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.welcome-content p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.benefits-list {
+  text-align: left;
+  margin: 2rem 0;
+  padding-left: 1.5rem;
+}
+
+.benefits-list li {
+  margin-bottom: 0.75rem;
+  position: relative;
+  list-style-type: none;
+}
+
+.benefits-list li::before {
+  content: '✓';
+  position: absolute;
+  left: -1.5rem;
+  color: var(--success-light);
+}
+
+.dark .benefits-list li::before {
+  color: var(--success-dark);
+}
+
+.testimonial {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  text-align: left;
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-info strong {
+  font-weight: 600;
+}
+
+.author-info span {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--accent-light);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.dark .theme-toggle {
+  background-color: var(--accent-dark);
+}
+
+.theme-toggle:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Loading Overlay */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid var(--accent-light);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+.dark .spinner {
+  border-top-color: var(--accent-dark);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1092px) {
+  .register-card {
+    max-width: 800px;
+  }
+
+  .register-form-section,
+  .welcome-section {
+    padding: 2.5rem;
+  }
+
+  .welcome-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .welcome-content p {
+    font-size: 1rem;
+  }
+
+  .benefits-list {
+    margin: 1.5rem 0;
+  }
+
+  .form-group input {
+    font-size: 0.95rem;
+  }
+
+  .submit-btn {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .register-card {
+    flex-direction: column;
+    max-width: 600px;
+  }
+
+  .register-form-section,
+  .welcome-section {
+    padding: 2rem;
+  }
+
+  .register-form-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .welcome-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .welcome-content p {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .benefits-list {
+    margin: 1rem 0;
+    padding-left: 1.2rem;
+  }
+
+  .benefits-list li {
+    font-size: 0.9rem;
+  }
+
+  .testimonial {
+    padding: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .role-options {
+    flex-direction: row;
+    gap: 0.75rem;
+  }
+
+  .role-option {
+    padding: 0.75rem;
+  }
+
+  .role-icon {
+    font-size: 1.2rem;
+  }
+
+  .submit-btn {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+
+  .theme-toggle {
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    padding: 1rem;
+    min-height: auto;
+  }
+
+  .register-card {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+
+  .register-form-section,
+  .welcome-section {
+    padding: 1.5rem;
+  }
+
+  .register-form-section h2 {
+    font-size: 1.25rem;
+  }
+
+  .form-group input {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .error-message {
+    font-size: 0.75rem;
+    bottom: -1.1rem;
+  }
+
+  .role-options {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .role-option {
+    padding: 0.6rem;
+  }
+
+  .role-icon {
+    font-size: 1.1rem;
+  }
+
+  .submit-btn {
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .login-prompt {
+    font-size: 0.85rem;
+  }
+
+  .welcome-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .welcome-content p {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .benefits-list {
+    margin: 0.75rem 0;
+    padding-left: 1rem;
+  }
+
+  .benefits-list li {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .testimonial {
+    padding: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .testimonial p {
+    font-size: 0.85rem;
+  }
+
+  .author-avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .author-info strong {
+    font-size: 0.9rem;
+  }
+
+  .author-info span {
+    font-size: 0.8rem;
+  }
+
+  .theme-toggle {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+
+  .spinner {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 360px) {
+  .register-container {
+    padding: 0.75rem;
+  }
+
+  .register-card {
+    border-radius: 8px;
+  }
+
+  .register-form-section,
+  .welcome-section {
+    padding: 1rem;
+  }
+
+  .register-form-section h2 {
+    font-size: 1.1rem;
+    gap: 0.3rem;
+  }
+
+  .icon {
+    font-size: 1em;
+  }
+
+  .form-group {
+    margin-bottom: 1.2rem;
+  }
+
+  .form-group input {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.7rem;
+  }
+
+  .error-message {
+    font-size: 0.7rem;
+    bottom: -1rem;
+  }
+
+  .password-strength-meter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .strength-text {
+    font-size: 0.75rem;
+  }
+
+  .role-selection label {
+    font-size: 0.85rem;
+  }
+
+  .role-option {
+    padding: 0.5rem;
+  }
+
+  .role-icon {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .submit-btn {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .login-prompt {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+  }
+
+  .welcome-content {
+    max-width: 100%;
+  }
+
+  .welcome-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .welcome-content p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
+  }
+
+  .benefits-list {
+    margin: 0.5rem 0;
+    padding-left: 0.8rem;
+  }
+
+  .benefits-list li {
+    font-size: 0.75rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .benefits-list li::before {
+    left: -0.8rem;
+  }
+
+  .testimonial {
+    padding: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .testimonial p {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .author-avatar {
+    width: 25px;
+    height: 25px;
+  }
+
+  .author-info strong {
+    font-size: 0.85rem;
+  }
+
+  .author-info span {
+    font-size: 0.75rem;
+  }
+
+  .theme-toggle {
+    top: 10px;
+    right: 10px;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+
+  .spinner {
+    width: 25px;
+    height: 25px;
+  }
+}
