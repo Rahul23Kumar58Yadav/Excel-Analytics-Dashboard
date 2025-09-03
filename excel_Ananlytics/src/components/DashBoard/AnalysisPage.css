@@ -1,0 +1,362 @@
+/* AnalysisPage.css - Complete Dark Mode & Responsive */
+
+:root {
+  /* Light Mode Defaults */
+  --primary: #4c6ef5;
+  --primary-light: #edf2ff;
+  --primary-dark: #3b5bdb;
+  --primary-darker: #2c4bc7;
+  --text: #1a202c;
+  --text-light: #4a5568;
+  --text-lighter: #718096;
+  --bg: #f8fafc;
+  --bg-light: #ffffff;
+  --border: #e2e8f0;
+  --border-dark: #cbd5e0;
+  --error: #e53e3e;
+  --success: #38a169;
+  --radius: 8px;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+.dark {
+  /* Dark Mode Overrides */
+  --primary: #60a5fa;
+  --primary-light: #1e3a8a;
+  --primary-dark: #2563eb;
+  --primary-darker: #1d4ed8;
+  --text: #f8fafc;
+  --text-light: #cbd5e1;
+  --text-lighter: #94a3b8;
+  --bg: #0f172a;
+  --bg-light: #1e293b;
+  --border: #334155;
+  --border-dark: #475569;
+  --error: #f87171;
+  --success: #4ade80;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Base Container */
+.analysis-container {
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 2rem;
+  transition: var(--transition);
+}
+
+/* Upload Section */
+.upload-section {
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.dropzone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  background-color: var(--bg-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.dropzone:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.dark .dropzone {
+  background-color: var(--bg-light);
+  border-color: var(--border-dark);
+}
+
+.upload-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.dropzone p {
+  margin: 0.5rem 0;
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.file-types {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* Analysis Content */
+.analysis-content {
+  display: grid;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Controls Section */
+.controls-section {
+  background-color: var(--bg-light);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.dark .controls-section {
+  background-color: var(--bg-light);
+  border: 1px solid var(--border);
+}
+
+.axis-selectors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.selector label {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.selector select {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--bg-light);
+  color: var(--text);
+  transition: var(--transition);
+  font-size: 0.95rem;
+}
+
+.selector select:hover {
+  border-color: var(--primary);
+}
+
+.selector select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(76, 110, 245, 0.2);
+}
+
+.dark .selector select {
+  background-color: var(--bg);
+  border-color: var(--border-dark);
+}
+
+/* Chart Types */
+.chart-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.chart-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background-color: var(--bg-light);
+  color: var(--text);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.95rem;
+}
+
+.chart-btn:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+}
+
+.chart-btn.active {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.dark .chart-btn {
+  background-color: var(--bg);
+  border-color: var(--border-dark);
+}
+
+.dark .chart-btn:hover {
+  background-color: var(--primary-light);
+}
+
+.dark .chart-btn.active {
+  background-color: var(--primary-dark);
+}
+
+/* Buttons */
+.generate-btn, .download-btn {
+  padding: 0.85rem 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.generate-btn:hover, .download-btn:hover {
+  background-color: var(--primary-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.generate-btn:active, .download-btn:active {
+  background-color: var(--primary-darker);
+  transform: translateY(0);
+}
+
+.dark .generate-btn, .dark .download-btn {
+  background-color: var(--primary-dark);
+}
+
+.dark .generate-btn:hover, .dark .download-btn:hover {
+  background-color: var(--primary-darker);
+}
+
+/* Chart Display */
+.chart-display {
+  background-color: var(--bg-light);
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark .chart-display {
+  background-color: var(--bg-light);
+  border: 1px solid var(--border);
+}
+
+.chart-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.download-btn {
+  align-self: flex-end;
+  margin-top: 1rem;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .analysis-container {
+    padding: 1.5rem;
+  }
+  
+  .analysis-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .axis-selectors {
+    grid-template-columns: 1fr;
+  }
+  
+  .dropzone {
+    padding: 2rem 1.5rem;
+  }
+  
+  .chart-types {
+    justify-content: center;
+  }
+  
+  .chart-btn {
+    flex: 1 0 calc(50% - 0.75rem);
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .analysis-container {
+    padding: 1rem;
+  }
+  
+  .controls-section {
+    padding: 1.25rem;
+  }
+  
+  .dropzone {
+    padding: 1.5rem 1rem;
+  }
+  
+  .upload-icon {
+    font-size: 2rem;
+  }
+  
+  .chart-btn {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  .generate-btn, .download-btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .analysis-container {
+    padding: 0.75rem;
+  }
+  
+  .dropzone p {
+    font-size: 1rem;
+  }
+  
+  .file-types {
+    font-size: 0.8rem;
+  }
+  
+  .chart-btn {
+    flex: 1 0 100%;
+  }
+  
+  .selector label {
+    font-size: 0.9rem;
+  }
+  
+  .selector select {
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+  
+  .generate-btn, .download-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

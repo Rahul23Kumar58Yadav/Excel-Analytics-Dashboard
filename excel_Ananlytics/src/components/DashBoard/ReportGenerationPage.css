@@ -1,0 +1,343 @@
+/* ReportGenerationPage.css */
+
+/* Base Container */
+.report-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Theme */
+.report-container.light {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+/* Dark Theme */
+.report-container.dark {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+/* Header Styles */
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid;
+}
+
+.report-header.light {
+  border-color: #e2e8f0;
+}
+
+.report-header.dark {
+  border-color: #334155;
+}
+
+.report-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Action Buttons */
+.report-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.action-btn.light {
+  background-color: #e2e8f0;
+  color: #475569;
+}
+
+.action-btn.dark {
+  background-color: #334155;
+  color: #f8fafc;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn:active {
+  transform: translateY(0);
+}
+
+/* Form Styles */
+.report-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.form-group input {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.form-group input.light {
+  background-color: #f1f5f9;
+  color: #1e293b;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input.dark {
+  background-color: #1e293b;
+  color: #f8fafc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.form-group input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #6366f1;
+}
+
+/* Section Editor */
+.section-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.section-editor.light {
+  background-color: rgba(241, 245, 249, 0.6);
+}
+
+.section-editor.dark {
+  background-color: rgba(30, 41, 59, 0.6);
+}
+
+.section-editor:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  border: none;
+  background: transparent;
+  border-bottom: 2px solid;
+}
+
+.section-title.light {
+  border-color: #e2e8f0;
+  color: #1e293b;
+}
+
+.section-title.dark {
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+.section-title:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.section-editor textarea {
+  min-height: 150px;
+  padding: 1rem;
+  border-radius: 8px;
+  border: none;
+  resize: vertical;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+.section-editor textarea.light {
+  background-color: #f8fafc;
+  color: #1e293b;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.section-editor textarea.dark {
+  background-color: #1e293b;
+  color: #f8fafc;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.section-editor textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #6366f1;
+}
+
+/* Add Section Button */
+.add-section-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: transparent;
+  border: 2px dashed;
+}
+
+.add-section-btn.light {
+  color: #64748b;
+  border-color: #cbd5e1;
+}
+
+.add-section-btn.dark {
+  color: #94a3b8;
+  border-color: #475569;
+}
+
+.add-section-btn:hover {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+  border-color: #6366f1;
+}
+
+/* Preview Section */
+.report-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.report-preview h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #6366f1;
+  margin: 0;
+}
+
+.preview-content {
+  padding: 2rem;
+  border-radius: 16px;
+  min-height: 400px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.preview-content.light {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.preview-content.dark {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(30, 41, 59, 0.6);
+}
+
+.preview-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: inherit;
+}
+
+.preview-section {
+  margin-bottom: 2rem;
+}
+
+.preview-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: inherit;
+}
+
+.preview-section p {
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Generate Report Button */
+.generate-report-btn {
+  width:50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  font-size:1.2rem;
+  margin:0 auto;
+}
+
+.generate-report-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.generate-report-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .report-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .report-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  
+  .action-btn {
+    flex: 1;
+    min-width: 120px;
+  }
+}
