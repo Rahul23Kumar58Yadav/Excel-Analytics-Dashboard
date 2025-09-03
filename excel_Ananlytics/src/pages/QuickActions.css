@@ -1,0 +1,221 @@
+/* QuickActions.css - Optimized and Enhanced */
+
+/* Base Container Styles */
+.quick-actions {
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.quick-actions.light {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.quick-actions.dark {
+  background: #1e293b;
+  border: 1px solid #334155;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Section Title */
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: inherit;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-radius: 3px;
+}
+
+/* Actions Grid Layout */
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Action Card Styles */
+.action-card {
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  min-height: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.action-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.action-card:hover::before {
+  opacity: 1;
+}
+
+/* Light/Dark Mode Card Styles */
+.action-card.light {
+  background-color: #f8fafc;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+}
+
+.action-card.dark {
+  background-color: #334155;
+  color: #f8fafc;
+  border: 1px solid #475569;
+}
+
+/* Hover Effects */
+.action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.action-card.light:hover {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.action-card.dark:hover {
+  background-color: #3e4a61;
+  border-color: #64748b;
+}
+
+/* Disabled State */
+.action-card:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Icon Styles */
+.action-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s ease;
+  color: #6366f1;
+}
+
+.action-card:hover .action-icon {
+  transform: scale(1.1);
+}
+
+.action-card.dark .action-icon {
+  color: #8b5cf6;
+}
+
+/* Title Styles */
+.action-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.action-card:hover .action-title {
+  color: #6366f1;
+}
+
+.action-card.dark:hover .action-title {
+  color: #8b5cf6;
+}
+
+/* Empty State Message */
+.no-actions-message {
+  text-align: center;
+  color: #64748b;
+  grid-column: 1 / -1;
+  padding: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.dark .no-actions-message {
+  color: #94a3b8;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .actions-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .quick-actions {
+    padding: 1.25rem;
+  }
+  
+  .actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  
+  .action-card {
+    padding: 1.25rem 0.75rem;
+    min-height: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .actions-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .action-card {
+    min-height: auto;
+    padding: 1rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+  
+  .action-icon {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+  }
+  
+  .action-title {
+    text-align: left;
+  }
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.action-card {
+  animation: fadeIn 0.4s ease forwards;
+  animation-delay: calc(var(--i) * 0.05s);
+  opacity: 0;
+}
